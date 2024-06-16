@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<problem revision="24" short-name="tree-of-segments" url="https://polygon.codeforces.com/p5ctKvF/marianna/tree-of-segments">
+    <names>
+        <name language="russian" value="Бедный Вася и начальство"/>
+    </names>
+    <statements>
+        <statement charset="UTF-8" language="russian" mathjax="true" path="statements/russian/problem.tex" type="application/x-tex"/>
+        <statement charset="UTF-8" language="russian" mathjax="true" path="statements/.html/russian/problem.html" type="text/html"/>
+        <statement language="russian" path="statements/.pdf/russian/problem.pdf" type="application/pdf"/>
+    </statements>
+    <judging cpu-name="Intel(R) Core(TM) i3-8100 CPU @ 3.60GHz" cpu-speed="3600" input-file="" output-file="" run-count="1">
+        <testset name="tests">
+            <time-limit>3000</time-limit>
+            <memory-limit>268435456</memory-limit>
+            <test-count>36</test-count>
+            <input-path-pattern>tests/%02d</input-path-pattern>
+            <answer-path-pattern>tests/%02d.a</answer-path-pattern>
+            <tests>
+                <test method="manual" sample="true"/>
+                <test cmd="gen_rnd 10 10 1" method="generated"/>
+                <test cmd="gen_rnd 14575 60522 36426" method="generated"/>
+                <test cmd="gen_rnd 48772 79445 90081" method="generated"/>
+                <test cmd="gen_rnd 90629 33447 3497" method="generated"/>
+                <test cmd="gen_rnd 7775 47202 94325" method="generated"/>
+                <test cmd="gen_rnd 4784 63982 68417" method="generated"/>
+                <test cmd="gen_rnd 31932 2156 35902" method="generated"/>
+                <test cmd="gen_rnd 78537 95728 23857" method="generated"/>
+                <test cmd="gen_rnd 86918 30739 29211" method="generated"/>
+                <test cmd="gen_rnd 38506 39679 63340" method="generated"/>
+                <test cmd="gen_rnd 61868 86568 60016" method="generated"/>
+                <test cmd="gen_rnd 96263 87940 24593" method="generated"/>
+                <test cmd="gen_rnd 36991 1449 90310" method="generated"/>
+                <test cmd="gen_rnd 77068 23355 11431" method="generated"/>
+                <test cmd="gen_rnd 91757 8580 49218" method="generated"/>
+                <test cmd="gen_rnd 94328 74934 63676" method="generated"/>
+                <test cmd="gen_rnd 96221 29355 99080" method="generated"/>
+                <test cmd="gen_rnd 31545 95922 48511" method="generated"/>
+                <test cmd="gen_rnd 75467 34067 38674" method="generated"/>
+                <test cmd="gen_rnd 6504 84691 99835" method="generated"/>
+                <test cmd="gen_rnd 44965 62034 59980" method="generated"/>
+                <test cmd="gen_rnd 45895 81221 32501" method="generated"/>
+                <test cmd="gen_rnd 8325 48152 47731" method="generated"/>
+                <test cmd="gen_rnd 48153 29302 9896" method="generated"/>
+                <test cmd="gen_rnd 97489 19022 8399" method="generated"/>
+                <test cmd="gen_rnd 66466 70607 74432" method="generated"/>
+                <test cmd="mod 60522 14575 14573 1" method="generated"/>
+                <test cmd="mod 36426 79445 79443 2" method="generated"/>
+                <test cmd="mod 60522 14575 2 228" method="generated"/>
+                <test cmd="mod 36426 79445 2 1337" method="generated"/>
+                <test cmd="mod_2 100000 100000 0 1" method="generated"/>
+                <test cmd="mod_2 100000 100000 99999 228" method="generated"/>
+                <test method="manual"/>
+                <test method="manual"/>
+                <test method="manual"/>
+            </tests>
+        </testset>
+    </judging>
+    <files>
+        <resources>
+            <file path="files/olymp.sty"/>
+            <file path="files/problem.tex"/>
+            <file path="files/statements.ftl"/>
+            <file path="files/testlib.h" type="h.g++"/>
+        </resources>
+        <executables>
+            <executable>
+                <source path="files/2.cpp" type="cpp.g++17"/>
+                <binary path="files/2.exe" type="exe.win32"/>
+            </executable>
+            <executable>
+                <source path="files/gen_rnd.cpp" type="cpp.g++17"/>
+                <binary path="files/gen_rnd.exe" type="exe.win32"/>
+            </executable>
+            <executable>
+                <source path="files/mod.cpp" type="cpp.g++17"/>
+                <binary path="files/mod.exe" type="exe.win32"/>
+            </executable>
+            <executable>
+                <source path="files/mod_2.cpp" type="cpp.g++17"/>
+                <binary path="files/mod_2.exe" type="exe.win32"/>
+            </executable>
+        </executables>
+    </files>
+    <assets>
+        <checker name="std::ncmp.cpp" type="testlib">
+            <source path="files/check.cpp" type="cpp.g++17"/>
+            <binary path="check.exe" type="exe.win32"/>
+            <copy path="check.cpp"/>
+            <testset>
+                <test-count>0</test-count>
+                <input-path-pattern>files/tests/checker-tests/%02d</input-path-pattern>
+                <output-path-pattern>files/tests/checker-tests/%02d.o</output-path-pattern>
+                <answer-path-pattern>files/tests/checker-tests/%02d.a</answer-path-pattern>
+                <tests/>
+            </testset>
+        </checker>
+        <validators>
+            <validator>
+                <source path="files/2.cpp" type="cpp.g++17"/>
+                <binary path="files/2.exe" type="exe.win32"/>
+                <testset>
+                    <test-count>3</test-count>
+                    <input-path-pattern>files/tests/validator-tests/%02d</input-path-pattern>
+                    <tests>
+                        <test verdict="valid"/>
+                        <test verdict="invalid"/>
+                        <test verdict="valid"/>
+                    </tests>
+                </testset>
+            </validator>
+        </validators>
+        <solutions>
+            <solution tag="main">
+                <source path="solutions/Main.cpp" type="cpp.g++17"/>
+                <binary path="solutions/Main.exe" type="exe.win32"/>
+            </solution>
+            <solution tag="time-limit-exceeded-or-accepted">
+                <source path="solutions/perebor.cpp" type="cpp.g++17"/>
+                <binary path="solutions/perebor.exe" type="exe.win32"/>
+            </solution>
+            <solution tag="time-limit-exceeded-or-accepted">
+                <source path="solutions/tl.cpp" type="cpp.g++17"/>
+                <binary path="solutions/tl.exe" type="exe.win32"/>
+            </solution>
+            <solution tag="wrong-answer">
+                <source path="solutions/wa.cpp" type="cpp.g++17"/>
+                <binary path="solutions/wa.exe" type="exe.win32"/>
+            </solution>
+        </solutions>
+    </assets>
+    <properties>
+        <property name="tests-wellformed" value="true"/>
+    </properties>
+    <stresses>
+        <stress-count>0</stress-count>
+        <stress-path-pattern>stresses/%03d</stress-path-pattern>
+        <list/>
+    </stresses>
+</problem>
